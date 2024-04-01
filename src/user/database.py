@@ -1,7 +1,8 @@
 import chromadb
+from config import db_path
 
 # Initialize ChromaDB client
-client = chromadb.PersistentClient(path="/pluralDB")
+client = chromadb.PersistentClient(path=db_path)
 
 
 # Function to create a collection

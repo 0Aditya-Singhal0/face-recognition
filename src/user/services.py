@@ -8,6 +8,7 @@ from .database import (
     update_documents,
     delete_documents,
 )
+import time
 
 
 # Function to create a collection for users
@@ -23,7 +24,9 @@ async def get_user_collection(name="Users"):
 # Function to add a user to the collection
 async def add_user_to_collection(user_data: User):
     collection = await get_user_collection()
-    return add_documents(collection, documents=[user_data.model_dump()])
+    return add_documents(
+        collection, documents=[user_data.model_dump()], ids=[time.time()]
+    )
 
 
 # Function to find similar users in the collection

@@ -1,1 +1,1 @@
-db_path = "/pluralDB"
+db_path = "../pluralDB"

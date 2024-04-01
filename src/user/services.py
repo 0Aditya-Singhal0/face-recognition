@@ -1,5 +1,5 @@
-from model import User
-from database import (
+from .model import User
+from .database import (
     create_collection,
     get_collection,
     add_documents,
@@ -44,8 +44,8 @@ async def similarity_search(
     )
 
 
-# Function to get data from the collection
-async def get_data(ids=None, where=None, include=None):
+# Function to get user data from the collection
+async def get_users(ids=None, where=None, include=None):
     collection = await get_user_collection()
     return get_documents(collection, ids=ids, where=where, include=include)
 

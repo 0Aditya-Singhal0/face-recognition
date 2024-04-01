@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from model import User
-from services import add_user_to_collection, get_users, update_user_data, delete_users
+from .model import User
+from .services import add_user_to_collection, get_users, update_user_data, delete_users
 
 
 userRouter = APIRouter()
@@ -15,7 +15,7 @@ async def create_user(user: User):
 async def read_user(user_id: str):
     user = await get_users(ids=[user_id])
     if user:
-        return user 
+        return user
     else:
         raise HTTPException(status_code=404, detail="User not found")
 

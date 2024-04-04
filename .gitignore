@@ -1,2 +1,13 @@
+# pychache
 *.pyc
+
+# chromadb
 *.sqlite3
+
+# model file
+*.pkl
+
+# images/
+*.png
+*.jpg
+*.jpeg

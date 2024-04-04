@@ -24,8 +24,18 @@ async def get_user_collection(name="Users"):
 # Function to add a user to the collection
 async def add_user_to_collection(user_data: User):
     collection = await get_user_collection()
+    user_data = user_data.model_dump()
     return add_documents(
-        collection, documents=[user_data.model_dump()], ids=[str(time.time())]
+        collection,
+        documents=[user_data["vector_embeddings"]],
+        metadatas=[
+            {
+                k: v
+                for k, v in user_data.items()
+                if k not in ["vector_embeddings", "photo_ids"]
+            }
+        ],
+        ids=[str(time.time())],
     )
 
 

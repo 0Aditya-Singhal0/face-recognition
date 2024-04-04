@@ -8,6 +8,6 @@ class User(BaseModel):
     date_of_birth: str
     email: str
     gender: str
-    vector_embeddings: List[float]
+    vector_embeddings: List[List[str]]
     phone_number: str
     photo_ids: List[float]

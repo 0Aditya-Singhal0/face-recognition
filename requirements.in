@@ -1,3 +1,5 @@
 pip-tools
-chromadb
 deepface
+pandas
+opencv-python
+streamlit
